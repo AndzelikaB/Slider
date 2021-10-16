@@ -24,7 +24,6 @@ body {
 }
 
 .slide {
-    display: none;
     width: 700px;
     height: 550px;
     overflow: hidden;
@@ -39,6 +38,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
 }
 
 .preview {
@@ -58,5 +58,6 @@ body {
 }
 
 .inactive {
+    background: gray;
     cursor: none;
 }

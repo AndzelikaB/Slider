@@ -1,44 +1,63 @@
 const slideNumber = document.querySelector(".slideNumber");
-const numberOfSlides = 5; //document.querySelector(".totalSlides");
+let numberOfSlides = document.querySelector(".totalSlides");
 const previewButton = document.querySelector(".previewButton");
 const nextButton = document.querySelector(".nextButton");
 var slide = document.querySelectorAll(".slide");
 let countSlides = 0;
+var slideCount = slide.length;
 
-function changeSlides() {
+numberOfSlides = slideCount;
 
-
+function changeSlide() {
     Array.from(slide).forEach(function (el) {
         el.classList.remove('active');
     });
+
     // Funkcja strzałkowa  Array.from(slide).forEach((el) => el.classList.remove('active'));
 
-    // 
-    //   slide.classList.add('active');
+    let zmienna = slide[countSlides];
+    zmienna.classList.add("active");
 
-    console.log("grr");
+    Array.from(slide).forEach(function (el) {
+        el.classList.add('d-none');
+    });
+
+    zmienna.classList.remove("d-none");
+
+    console.log(countSlides);
 
 }
 // Kocham Andzie
 function PreviewSlide() {
-    if (countSlides >= 2) {
-        countSlides--;
-        changeSlides();
+    countSlides--;
+    if (countSlides < 0) {
+
+        previewButton.disabled = true;
+        console.log("przekroczono przedział w dó");
+
+
     }
     else {
-        return;
+        changeSlide();
     }
-    slideNumber.innerHTML = countSlides;
 
+    slideNumber.innerHTML = countSlides + 1;
 }
 
 function NextSlide() {
-    if (countSlides < numberOfSlides) {
-        countSlides++;
-    } else {
-        return;
+    if (countSlides == numberOfSlides) {
+        nextButton.disabled = true;
     }
-    slideNumber.innerHTML = countSlides;
+    else if (countSlides < numberOfSlides) {
+        countSlides++;
+        slideNumber.innerHTML = countSlides + 1;
+        console.log("next" + countSlides)
+        changeSlide()
+
+        previewButton.disabled = false;
+
+    }
+
 }
 // Nasłuchiwanie
 previewButton.addEventListener("click", PreviewSlide);
