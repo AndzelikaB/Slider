@@ -4,10 +4,9 @@ const previewButton = document.querySelector(".previewButton");
 const nextButton = document.querySelector(".nextButton");
 var slide = document.querySelectorAll(".slide");
 let countSlides = 0;
-var slideCount = slide.length;
+var slideCount = slide.length - 1;
 
-numberOfSlides = slideCount;
-
+console.log(numberOfSlides);
 function changeSlide() {
     Array.from(slide).forEach(function (el) {
         el.classList.remove('active');
@@ -24,40 +23,31 @@ function changeSlide() {
 
     zmienna.classList.remove("d-none");
 
-    console.log(countSlides);
+    console.log("countSlides change slide" + countSlides);
 
 }
 // Kocham Andzie
 function PreviewSlide() {
     countSlides--;
-    if (countSlides < 0) {
-
+    if (countSlides == 0) {
         previewButton.disabled = true;
-        console.log("przekroczono przedział w dó");
-
-
+        nextButton.disabled = false;
     }
-    else {
-        changeSlide();
-    }
-
+    changeSlide();
     slideNumber.innerHTML = countSlides + 1;
 }
 
 function NextSlide() {
-    if (countSlides == numberOfSlides) {
+    countSlides++;
+    if (countSlides < numberOfSlides) {
+        previewButton.disabled = false;
+        nextButton.disabled = false;
+    }
+    else if (countSlides == numberOfSlides) {
         nextButton.disabled = true;
     }
-    else if (countSlides < numberOfSlides) {
-        countSlides++;
-        slideNumber.innerHTML = countSlides + 1;
-        console.log("next" + countSlides)
-        changeSlide()
-
-        previewButton.disabled = false;
-
-    }
-
+    slideNumber.innerHTML = countSlides + 1;
+    changeSlide()
 }
 // Nasłuchiwanie
 previewButton.addEventListener("click", PreviewSlide);
