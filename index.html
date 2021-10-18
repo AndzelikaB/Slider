@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title> Javascript Calculator </title>
+    <title> Slider </title>
 </head>
 
 <body>
-
     <div class="slider">
         <div class="slides">
             <!--Image Slide-->
-
             <img class="slide active " src="css/img/gwiazdy-niebo.jpg">
             <img class="slide d-none" src="css/img/milky-way.jpg">
             <img class="slide d-none" src="css/img/gwiazdy.jpeg">
@@ -28,21 +27,20 @@
 
 
             <!-- Arrows-->
-
             <div class="preview">
                 <button class="buttons previewButton" disabled="true">
-                    < </button>
+                    <i class="fas fa-chevron-left fa-lg"></i> </button>
             </div>
             <div class="next">
-                <button class="buttons nextButton"> > </button>
+                <button class="buttons nextButton"> <i class="fas fa-chevron-right fa-lg"></i> </button>
             </div>
 
         </div>
 
         <!-- Slide counter-->
 
-        <div class="countSlides">
-            <p class="slideNumber">1</p> / <p class="totalSlides">ilosc</p>
+        <div class="details">
+            <p class="slideNumber"> 1 </p> / <p class="totalSlides"> 3 </p>
         </div>
     </div>
 

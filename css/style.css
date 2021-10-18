@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap");
 
 html {
     font-family: "Montserrat", sans-serif;
@@ -24,8 +24,8 @@ body {
 }
 
 .slide {
-    width: 700px;
-    height: 550px;
+    width: 800px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -39,6 +39,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    margin: 0 10px;
 }
 
 .preview {
@@ -51,10 +52,17 @@ body {
     justify-content: flex-end;
 }
 
-.countSlides {
+.details {
+    padding: 5px;
+    font-size: 26px;
+    font-weight: 600;
     display: flex;
-    align-items: center;
     justify-content: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+    padding: 0 10px;
 }
 
 .inactive {

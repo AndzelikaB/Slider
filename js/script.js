@@ -6,13 +6,9 @@ var slide = document.querySelectorAll(".slide");
 let countSlides = 0;
 var slideCount = slide.length - 1;
 
-console.log(numberOfSlides);
+numberOfSlides = slideCount;
 function changeSlide() {
-    Array.from(slide).forEach(function (el) {
-        el.classList.remove('active');
-    });
-
-    // Funkcja strzałkowa  Array.from(slide).forEach((el) => el.classList.remove('active'));
+    Array.from(slide).forEach((el) => el.classList.remove('active'));
 
     let zmienna = slide[countSlides];
     zmienna.classList.add("active");
@@ -24,15 +20,14 @@ function changeSlide() {
     zmienna.classList.remove("d-none");
 
     console.log("countSlides change slide" + countSlides);
-
 }
 // Kocham Andzie
 function PreviewSlide() {
     countSlides--;
     if (countSlides == 0) {
         previewButton.disabled = true;
-        nextButton.disabled = false;
     }
+    nextButton.disabled = false;
     changeSlide();
     slideNumber.innerHTML = countSlides + 1;
 }
