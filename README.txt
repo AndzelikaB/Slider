@@ -1,0 +1,1 @@
+Created a slider in Javascript Language. For practice.
